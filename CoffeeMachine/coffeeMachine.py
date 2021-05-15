@@ -39,6 +39,7 @@ def serve_coffee(coffee_type):
             if total_money > MENU[coffee_type]['cost']:
                 change = total_money - MENU[coffee_type]['cost']
                 print(f"Here is ${change:.2f} dollars in change ")
+            print(f"Here is your {coffee_type}.😊")
             resources['money'] += MENU[coffee_type]['cost']
             resources['water'] -= MENU[coffee_type]['ingredients']['water']
             resources['coffee'] -= MENU[coffee_type]['ingredients']['coffee']
