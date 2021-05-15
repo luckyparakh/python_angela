@@ -15,7 +15,9 @@ question_data = [
     {"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
 ]
 
+
 #https://opentdb.com/api.php?amount=10&category=18&type=boolean
+
 tdb_question = [
     {"category": "Science: Computers", "type": "boolean", "difficulty": "medium",
      "question": "The HTML5 standard was published in 2014.", "correct_answer": "True",
