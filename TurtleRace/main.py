@@ -11,12 +11,12 @@ winner = ""
 if user_input in colours:
     is_race_start = True
 
-cor_y = -50
+cor_y = -100
 for colour in colours:
     new_turtle = Turtle()
     new_turtle.shape('turtle')
     new_turtle.penup()
-    new_turtle.color(colour)
+    new_turtle.fillcolor(colour)
     new_turtle.goto(-230, cor_y)
     cor_y += 40
     turtles.append(new_turtle)
@@ -24,9 +24,13 @@ for colour in colours:
 while is_race_start:
     for racer in turtles:
         racer.forward(randint(0, 10))
-        if racer.xcor() > 460:
-            winner = racer.color()
+        if racer.xcor() > 220:
+            winner_color = racer.fillcolor()
             is_race_start = False
             break
-print(f"Winner is {winner}")
+print(f"Winner is {winner_color}.")
+if user_input == winner_color:
+    print(f"You win & your input was {user_input}.")
+else:
+    print(f"You lose & your input was {user_input}.")
 screen.exitonclick()
