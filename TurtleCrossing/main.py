@@ -12,6 +12,7 @@ from turtle import Screen
 from TurtleCrossing.pedestrian import Pedestrian
 from TurtleCrossing.car import Car
 from time import sleep
+from TurtleCrossing.scoreboard import ScoreBoard
 
 is_game_on = True
 screen = Screen()
@@ -20,16 +21,30 @@ screen.title("Road Crossing Game")
 screen.tracer(0)
 screen.listen()
 walker = Pedestrian()
+sb = ScoreBoard()
+sb.write_score()
 screen.onkeypress(walker.move, "Up")
-cars = []
+car_obj = Car()
 
 while is_game_on:
     screen.update()
     sleep(0.1)
-    cars.append(Car())
-    for car in cars:
-        if car.xcor() < -300:
-            cars.remove(car)
-        car.move()
+
+    if walker.ycor() > 245:
+        pass
+        walker.reset_pos()
+        sb.write_score()
+        Car.car_speed += 1
+
+    for car in car_obj.cars:
+        car_obj.move_car(car)
+        car_obj.remove_car(car)
+        if car.distance(walker) < 15:
+            walker.reset_pos()
+            is_game_on = False
+            sb.game_over()
+
+    car_obj.add_car()
+
 
 screen.exitonclick()

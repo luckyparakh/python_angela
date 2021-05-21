@@ -11,3 +11,6 @@ class Pedestrian(Turtle):
 
     def move(self):
         self.fd(10)
+
+    def reset_pos(self):
+        self.setpos(0, -260)
