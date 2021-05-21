@@ -20,7 +20,7 @@ class Snake:
 
     def __init__(self):
         self.segment = []
-        self.add_segment(20)
+        self.add_segment(3)
         self.head = self.segment[0]
 
     def add_segment(self, len_seg=1):
