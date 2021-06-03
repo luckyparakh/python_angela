@@ -1,10 +1,11 @@
 import smtplib
 import datetime as dt
 from random import choice
+import config
 
-email = 'testlucky28@gmail.com'
-password = 'riship28'
-to_email = 'testlucky28@yahoo.com'
+email = config.EMAIL
+password = config.PASSWORD
+to_email = config.TO_EMAIL
 sub = "Quote of Day"
 day = dt.datetime.now().weekday()
 

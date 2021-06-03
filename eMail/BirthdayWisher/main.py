@@ -14,10 +14,12 @@ import smtplib
 import datetime
 import pandas
 from random import randint
+import config
 
-email = 'testlucky28@gmail.com'
-password = '' # Set Password
-to_email = 'testlucky28@yahoo.com'
+email = config.EMAIL
+password = config.PASSWORD
+to_email = config.TO_EMAIL
+
 df = pandas.read_csv('birthdays.csv')
 dt = datetime.datetime.now()
 
